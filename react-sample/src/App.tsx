@@ -6,6 +6,14 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  const fetchRandomApi = async () => {
+    const response = await fetch('https://randomuser.me/api/')
+    const data = await response.json()
+    console.log(data)
+  }
+
+  fetchRandomApi()
+
   return (
     <>
       <div>
