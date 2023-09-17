@@ -8,5 +8,4 @@ function calculateTotal(items, options) {
     t = t + (options.ship || 5)
     return t
   }
-
   
