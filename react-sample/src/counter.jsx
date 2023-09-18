@@ -1,23 +1,30 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 
-export default function Counter({ initialCount }) {
-  let [count, setCount] = useState(initialCount)
+function Counter({ initialCount }) {
+  const [count, setCount] = useState(initialCount)
 
   function incrementCount() {
-    count = count + 1
+    setCount(count + 1)
     console.log(count)
   }
 
   function decrementCount() {
-    count = count - 1
+    setCount(count - 1)
     console.log(count)
   }
 
   return (
     <div>
       <button onClick={decrementCount}>-</button>
-      <span>{count}</span>
+      {count}
       <button onClick={incrementCount}>+</button>
     </div>
   )
 }
+
+Counter.propTypes = {
+  initialCount: PropTypes.number
+}
+
+export default Counter
